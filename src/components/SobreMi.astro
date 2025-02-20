@@ -1,0 +1,67 @@
+---
+/* About.astro */
+/* Frontmatter vacío, o agrega variables/importaciones si lo necesitas */
+---
+
+<!-- Sección Sobre Mí -->
+<section id="sobre-mi" class="py-12 bg-transparent font-poppins fade-in">
+   <!-- Fondo degradado superior: elemento decorativo posicionado en la parte alta -->
+   <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg]
+                bg-gradient-to-tr from-[#cbfbf1] to-[#009689] opacity-30 
+                sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 
+                                      60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 
+                                      0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+    </div>
+  </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold text-teal-600 mb-8">Sobre Mí</h2>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+        <!-- Imagen de perfil -->
+        <img
+          src="/public/images/image-hero1.png"
+          alt="Mi Avatar"
+          class="w-48 h-48 rounded-full shadow-lg object-cover"
+        />
+        <!-- Contenido descriptivo -->
+        <div class="text-left max-w-xl">
+          <p class="text-lg text-gray-600 mb-4">
+            Soy un apasionado profesional del desarrollo web con experiencia en proyectos innovadores y un enfoque en diseño moderno. Me encanta aprender y aplicar nuevas tecnologías para crear soluciones digitales de alto impacto.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            A lo largo de mi carrera, he trabajado en diversos proyectos que me han permitido crecer profesionalmente y ampliar mis conocimientos en áreas como Frontend, Backend y experiencia de usuario. Mi objetivo es seguir innovando y aportar soluciones creativas.
+          </p>
+          <!-- Botón para descargar CV -->
+          <a
+            href="/public/resume.pdf"
+            target="_blank"
+            class="inline-flex items-center gap-2 px-6 py-2 bg-teal-100 text-teal-700 rounded-full shadow hover:bg-teal-200 transition-colors text-sm font-semibold"
+          >
+            Descargar CV
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 16l4-4h-3V4h-2v8H8l4 4zM4 20h16v-2H4v2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Animación Fade-In -->
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+  </style>
+  
