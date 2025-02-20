@@ -1,21 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import Tecgnologias from '../components/tecgnologias.astro'; // Corregí typo de "tecgnologias" si es correcto
+import Tecnologias from '../components/Tecnologias.astro';
 import Proyectos from '../components/Proyectos.astro';
 import Formacion from '../components/Formacion.astro';
 import SobreMi from '../components/SobreMi.astro';
 import Contact from '../components/Contact.astro';
-import Welcome from '../components/Welcome.astro'; // Nuevo componente, lo mantengo
-import Footer from '../components/Footer.astro'; // Nuevo componente, lo mantengo
-
-// Nota: No necesitamos importar Navbar ni FloatingBar aquí porque ya están en Layout.astro
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Sebastian Lopez - Portafolio">
-  
   <Hero />
-  <Tecgnologias />
+  <Tecnologias />
   <Proyectos />
   <Formacion />
   <SobreMi />

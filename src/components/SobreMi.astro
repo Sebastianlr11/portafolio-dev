@@ -1,30 +1,24 @@
+
 ---
-/* About.astro */
+/* sobre-mi.astro */
 /* Frontmatter vacío, o agrega variables/importaciones si lo necesitas */
 ---
 
 <!-- Sección Sobre Mí -->
 <section id="sobre-mi" class="py-12 bg-transparent dark:bg-gray-900 font-poppins fade-in">
-  <!-- Fondo degradado superior: elemento decorativo posicionado en la parte alta -->
   <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
     <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg]
-                bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30 
+                bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30
                 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 
-                                      60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 
+         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%,
+                                      60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%,
                                       0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
     </div>
   </div>
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-4xl font-bold text-teal-600 dark:text-teal-400 mb-8">Sobre Mí</h2>
     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-      <!-- Imagen de perfil -->
-      <img
-        src="image-hero1.png"
-        alt="Mi Avatar"
-        class="w-48 h-48 rounded-full shadow-lg object-cover"
-      />
-      <!-- Contenido descriptivo -->
+      <img src="image-hero1.png" alt="Mi Avatar" class="w-48 h-48 rounded-full shadow-lg object-cover" />
       <div class="text-left max-w-xl">
         <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
           Soy un apasionado profesional del desarrollo web con experiencia en proyectos innovadores y un enfoque en diseño moderno. Me encanta aprender y aplicar nuevas tecnologías para crear soluciones digitales de alto impacto.
@@ -32,12 +26,8 @@
         <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
           A lo largo de mi carrera, he trabajado en diversos proyectos que me han permitido crecer profesionalmente y ampliar mis conocimientos en áreas como Frontend, Backend y experiencia de usuario. Mi objetivo es seguir innovando y aportar soluciones creativas.
         </p>
-        <!-- Botón para descargar CV -->
-        <a
-          href="resume.pdf"
-          target="_blank"
-          class="inline-flex items-center gap-2 px-6 py-2 bg-teal-100 dark:bg-teal-800/50 text-teal-700 dark:text-teal-300 rounded-full shadow hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors text-sm font-semibold"
-        >
+        <a href="resume.pdf" target="_blank"
+           class="inline-flex items-center gap-2 px-6 py-2 bg-teal-100 dark:bg-teal-800/50 text-teal-700 dark:text-teal-300 rounded-full shadow hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors text-sm font-semibold" aria-label="Descargar CV">
           Descargar CV
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 16l4-4h-3V4h-2v8H8l4 4zM4 20h16v-2H4v2z" />
@@ -48,8 +38,9 @@
   </div>
 </section>
 
-<!-- Animación Fade-In -->
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -62,5 +53,9 @@
   }
   .fade-in {
     animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
   }
 </style>

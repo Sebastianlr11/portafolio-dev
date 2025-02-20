@@ -1,9 +1,9 @@
 ---
-import '../styles/global.css';
-import Navbar from '../components/Navbar.astro'; // Cambié Header por Navbar
-import FloatingBar from '../components/FloatingBar.astro';
-
-const { title = "Mi Portafolio" } = Astro.props;
+export let title = "Sebastian Lopez - Portafolio";
+export let darkMode = false;
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import FloatingBar from "../components/FloatingBar.astro";
 ---
 
 <!doctype html>
@@ -11,45 +11,31 @@ const { title = "Mi Portafolio" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Portafolio personal de Sebastian Lopez, desarrollador web con experiencia en tecnologías modernas." />
+    <meta name="generator" content="Astro" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Explora mis proyectos, habilidades y formación en este portafolio." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/preview.jpg" />
+    <meta property="og:url" content="https://tuportafolio.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" fetchpriority="high" />
+
+    <!-- Preconexión para mejorar carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" fetchpriority="low" />
+    
     <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <Navbar /> <!-- Usamos Navbar en lugar de Header -->
+  
+  <body class:list={{ dark: darkMode }}>
+    <Navbar />
     <main>
-      <slot /> <!-- Contenido de la página -->
+      <slot /> <!-- Contenido dinámico de la página -->
     </main>
     <FloatingBar />
   </body>
 </html>
-
-<style is:global>
-  :root {
-    /* Modo claro (por defecto) */
-    --bg-color: #ffffff;
-    --text-color: #1f2937; /* gris oscuro */
-    --text-muted: #6b7280; /* gris medio */
-    --accent-color: #2dd4bf; /* teal */
-    --card-bg: #f0fdfa; /* fondo claro para ítems */
-    --line-color: #e5e7eb; /* gris claro para líneas */
-  }
-
-  /* Modo oscuro */
-  .dark {
-    --bg-color: #1f2937;
-    --text-color: #f3f4f6;
-    --text-muted: #9ca3af;
-    --accent-color: #2dd4bf;
-    --card-bg: #374151;
-    --line-color: #4b5563;
-  }
-
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-</style>

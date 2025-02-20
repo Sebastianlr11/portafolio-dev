@@ -5,43 +5,33 @@
 
 <!-- Contenedor principal de la sección Hero -->
 <div class="bg-white dark:bg-gray-900 relative">
-  <!-- Contenedor relativo para posicionar elementos absolutos (fondos decorativos) -->
   <div class="relative isolate px-6 pt-8 lg:px-8">
-    <!-- Fondo degradado superior: elemento decorativo posicionado en la parte alta -->
     <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
       <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[40deg]
-                  bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-70 
+                  bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-70
                   sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-           style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 
-                                        60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 
+           style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%,
+                                        60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%,
                                         0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
       </div>
     </div>
 
-    <!-- Contenedor principal del contenido Hero: imagen y texto -->
     <div class="mx-auto max-w-6xl py-16 sm:py-16 lg:py-16 flex flex-col items-center gap-8">
-      <!-- Contenedor de la imagen (siempre aparecerá primero) -->
       <div class="relative w-full max-w-lg flex justify-center">
-        <!-- Degradado alrededor de la imagen: efecto sutil para integrarla con el fondo -->
         <div class="absolute inset-0 bg-gradient-to-r from-[#cbfbf1] via-transparent to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf]
                     rounded-full blur-3xl opacity-50 w-80 h-80"></div>
-        <!-- Imagen de perfil con animación fadeInScale -->
         <img src="image-hero2.png" alt="Foto de Sebastian Lopez"
              class="relative w-90 h-90 rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-800 fade-in-scale">
       </div>
 
-      <!-- Contenedor del texto -->
       <div class="max-w-2xl text-center fade-in-up font-poppins">
-        <!-- Título principal: Nombre -->
         <h1 class="text-5xl font-bold tracking-tight text-teal-600 dark:text-teal-400 sm:text-7xl text-center">
           Sebastian Lopez
         </h1>
-        <!-- Párrafo descriptivo -->
         <p class="mt-8 text-xl font-medium text-gray-500 dark:text-gray-300 text-center">
           Ingeniero de Software. <span class="text-teal-600 dark:text-teal-400">Desarrollador Frontend.</span> Amante de la tecnología y la programación.
         </p>
 
-        <!-- Badge de disponibilidad -->
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a href="#" class="text-sm font-semibold text-gray-900 dark:text-gray-100">
             <span class="bg-green-100 text-green-800 dark:bg-teal-600 dark:text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">
@@ -50,60 +40,44 @@
           </a>
         </div>
 
-        <!-- Redes y contacto (botones tipo "pill") -->
         <div class="mt-6 flex flex-wrap items-center justify-center gap-6 py-6">
-          <!-- Botón LinkedIn -->
           <a href="https://www.linkedin.com/in/sebastian-lopez-9969151b0/" target="_blank"
-             class="inline-flex items-center gap-2 rounded-full bg-teal-100 dark:bg-teal-800/50 px-4 py-2 text-teal-600 dark:text-teal-300 hover:bg-teal-200 dark:hover:bg-teal-700/50 transition">
+             class="inline-flex items-center gap-2 rounded-full bg-teal-100 dark:bg-teal-800/50 px-4 py-2 text-teal-600 dark:text-teal-300 hover:bg-teal-200 dark:hover:bg-teal-700/50 transition" aria-label="LinkedIn">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19 0h-14C2.79 0 1 .79 1 2v20c0 1.21.79 2 2 2h14c1.21 
-                       0 2-.79 2-2V2c0-1.21-.79-2-2-2zM8.34 19.5H5.66v-8.5h2.68v8.5zM7 
-                       9.25c-.86 0-1.56-.7-1.56-1.56S6.14 6.13 7 6.13s1.56.7 
-                       1.56 1.56S7.86 9.25 7 9.25zm12 10.25h-2.68v-4.29c0-1.02-.02-2.33-1.42-2.33-1.42 
-                       0-1.64 1.11-1.64 2.25v4.37h-2.68v-8.5h2.57v1.16h.03c.36-.68 
+              <path d="M19 0h-14C2.79 0 1 .79 1 2v20c0 1.21.79 2 2 2h14c1.21
+                       0 2-.79 2-2V2c0-1.21-.79-2-2-2zM8.34 19.5H5.66v-8.5h2.68v8.5zM7
+                       9.25c-.86 0-1.56-.7-1.56-1.56S6.14 6.13 7 6.13s1.56.7
+                       1.56 1.56S7.86 9.25 7 9.25zm12 10.25h-2.68v-4.29c0-1.02-.02-2.33-1.42-2.33-1.42
+                       0-1.64 1.11-1.64 2.25v4.37h-2.68v-8.5h2.57v1.16h.03c.36-.68
                        1.24-1.4 2.56-1.4 2.74 0 3.25 1.8 3.25 4.09v4.65z" />
             </svg>
             <span>LinkedIn</span>
           </a>
 
-          <!-- Botón GitHub -->
           <a href="https://github.com/Sebastianlr11" target="_blank"
-             class="inline-flex items-center gap-2 rounded-full bg-teal-100 dark:bg-teal-800/50 px-4 py-2 text-teal-600 dark:text-teal-300 hover:bg-teal-200 dark:hover:bg-teal-700/50 transition">
+             class="inline-flex items-center gap-2 rounded-full bg-teal-100 dark:bg-teal-800/50 px-4 py-2 text-teal-600 dark:text-teal-300 hover:bg-teal-200 dark:hover:bg-teal-700/50 transition" aria-label="GitHub">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
-                       3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
-                       0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73 
-                       1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.304 
-                       3.495.997.107-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 
-                       0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 
-                       0 0 1.01-.322 3.3 1.23.96-.267 1.98-.399 
-                       3-.405 1.02.006 2.04.138 3 .405 2.29-1.552 
-                       3.3-1.23 3.3-1.23.653 1.652.241 2.873.118 3.176.77.84 
-                       1.236 1.91 1.236 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.81 1.096.81 
-                       2.21 0 1.596-.014 2.88-.014 3.272 0 .317.216.687.82.57C20.565 
-                       22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577
+                       0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73
+                       1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.304 3.495.997.107-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93
+                       0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.01-.322 3.3 1.23.96-.267 1.98-.399
+                       3-.405 1.02.006 2.04.138 3 .405 2.29-1.552 3.3-1.23 3.3-1.23.653 1.652.241 2.873.118 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.81 1.096.81
+                       2.21 0 1.596-.014 2.88-.014 3.272 0 .317.216.687.82.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
             </svg>
             <span>GitHub</span>
           </a>
 
-          <!-- Botón que copia el correo -->
           <a href="#" id="copy-email"
-             class="inline-flex items-center gap-2 rounded-full bg-teal-100 dark:bg-teal-800/50 px-4 py-2 text-teal-600 dark:text-teal-300 hover:bg-teal-200 dark:hover:bg-teal-700/50 transition">
+             class="inline-flex items-center gap-2 rounded-full bg-teal-100 dark:bg-teal-800/50 px-4 py-2 text-teal-600 dark:text-teal-300 hover:bg-teal-200 dark:hover:bg-teal-700/50 transition" aria-label="Copiar correo">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M2 4c-1.1 0-2 .9-2 
-                       2v12c0 1.1.9 2 2 2h20c1.1 
-                       0 2-.9 2-2V6c0-1.1-.9-2-2-2H2zm0 
-                       2h20v.01L12 13 2 6.01V6zm0 
-                       12V8.98l9.76 6.51a1 1 0 001.09 0L22 
-                       8.98V18H2z" />
+              <path d="M2 4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H2zm0
+                       2h20v.01L12 13 2 6.01V6zm0 12V8.98l9.76 6.51a1 1 0 001.09 0L22 8.98V18H2z" />
             </svg>
             <span>sebastianlr051@gmail.com</span>
           </a>
 
-          <!-- Mensaje que se muestra al copiar -->
           <div id="copied-message" class="hidden text-teal-600 dark:text-teal-400 mt-2">¡Correo copiado!</div>
 
-          <!-- Script para copiar y mostrar mensaje -->
           <script is:inline>
             document.getElementById('copy-email').addEventListener('click', function(e) {
               e.preventDefault();
@@ -125,26 +99,23 @@
       </div>
     </div>
 
-    <!-- Fondo degradado inferior: elemento decorativo posicionado en la parte baja -->
-    <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl 
+    <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl
                 sm:top-[calc(100%-30rem)]" aria-hidden="true">
       <div class="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2
-                  bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30 
+                  bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30
                   sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-           style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 
-                                        72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 
-                                        27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 
+           style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%,
+                                        72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%,
+                                        27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%,
                                         74.1% 44.1%)">
       </div>
     </div>
   </div>
 </div>
 
-<!-- Estilos -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-  /* Animación para el texto: se desliza suavemente hacia arriba mientras aparece */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -156,7 +127,6 @@
     }
   }
 
-  /* Animación para la imagen: se escala suavemente de 0.95 a 1 y se desvanece */
   @keyframes fadeInScale {
     from {
       opacity: 0;
@@ -168,17 +138,14 @@
     }
   }
 
-  /* Clase que aplica la animación fadeInUp al texto en 1.5s */
   .fade-in-up {
     animation: fadeInUp 1.5s ease-out forwards;
   }
 
-  /* Clase que aplica la animación fadeInScale a la imagen en 1.5s */
   .fade-in-scale {
     animation: fadeInScale 1.5s ease-out forwards;
   }
 
-  /* Clase para aplicar la fuente "Poppins" a los textos */
   .font-poppins {
     font-family: 'Poppins', sans-serif;
   }

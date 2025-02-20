@@ -5,123 +5,89 @@
 
 <!-- Sección de Formación -->
 <section id="educacion" class="py-12 bg-transparent dark:bg-gray-900 font-poppins fade-in">
-  <!-- Fondo degradado superior: elemento decorativo posicionado en la parte alta -->
   <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
     <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg]
-                bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30 
+                bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30
                 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 
-                                      60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 
+         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%,
+                                      60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%,
                                       0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
     </div>
   </div>
   <div class="max-w-5xl mx-auto px-4">
     <h2 class="text-4xl font-bold" style="color: var(--accent-color);">Formación</h2>
     <ol class="sm:flex items-start gap-6">
-      <li class="relative mb-6 sm:mb-0 last:mb-0 fade-up">
-        <div class="flex items-start">
-          <div class="z-10 flex items-center justify-center w-8 h-8 rounded-full shrink-0 pulse" style="background-color: var(--card-bg);">
-            <svg class="w-4 h-4" style="color: var(--accent-color);" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-            </svg>
+      {[
+        {
+          title: "Licenciatura en Ingeniería de Software",
+          date: "2023",
+          certification: "Certificado",
+          institution: "Universidad X, Ciudad, País",
+          description: "Breve descripción de la carrera."
+        },
+        {
+          title: "Curso de Desarrollo Web Full Stack",
+          date: "2021",
+          certification: "Autodidacta",
+          institution: "Academia Y, Ciudad, País",
+          description: "Breve descripción del curso."
+        },
+        {
+          title: "Certificación en UX/UI Design",
+          date: "2020",
+          certification: "Certificado",
+          institution: "Instituto Z, Ciudad, País",
+          description: "Breve descripción del certificado."
+        }
+      ].map(({ title, date, certification, institution, description }) => (
+        <li class="relative mb-6 sm:mb-0 last:mb-0 fade-up" key={title}>
+          <div class="flex items-start">
+            <div class="z-10 flex items-center justify-center w-8 h-8 rounded-full shrink-0 pulse" style="background-color: var(--card-bg);">
+              <svg class="w-4 h-4" style="color: var(--accent-color);" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+              </svg>
+            </div>
+            <div class="hidden sm:flex w-full h-0.5 mt-4 ml-2" style="background-color: var(--line-color);"></div>
           </div>
-          <div class="hidden sm:flex w-full h-0.5 mt-4 ml-2" style="background-color: var(--line-color);"></div>
-        </div>
-        <div class="mt-3 sm:pr-8 formation-item" style="color: var(--text-muted);">
-          <h3 class="text-lg font-semibold" style="color: var(--text-color);">
-            Licenciatura en Ingeniería de Software
-          </h3>
-          <time class="block mb-2 text-sm font-normal leading-none">
-            2023
-          </time>
-          <div class="mb-2">
-            <span class="inline-block rounded-full px-3 py-1 text-sm font-semibold" style="background-color: var(--accent-color); color: var(--bg-color);">
-              Certificado
-            </span>
+          <div class="mt-3 sm:pr-8 formation-item" style="color: var(--text-muted);">
+            <h3 class="text-lg font-semibold" style="color: var(--text-color);">
+              {title}
+            </h3>
+            <time class="block mb-2 text-sm font-normal leading-none">
+              {date}
+            </time>
+            <div class="mb-2">
+              <span class="inline-block rounded-full px-3 py-1 text-sm font-semibold" style="background-color: var(--accent-color); color: var(--bg-color);">
+                {certification}
+              </span>
+            </div>
+            <p class="text-base font-normal">
+              {institution}. {description}
+            </p>
           </div>
-          <p class="text-base font-normal">
-            Universidad X, Ciudad, País. Breve descripción de la carrera.
-          </p>
-        </div>
-      </li>
-
-      <li class="relative mb-6 sm:mb-0 last:mb-0 fade-up">
-        <div class="flex items-start">
-          <div class="z-10 flex items-center justify-center w-8 h-8 rounded-full shrink-0 pulse" style="background-color: var(--card-bg);">
-            <svg class="w-4 h-4" style="color: var(--accent-color);" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-            </svg>
-          </div>
-          <div class="hidden sm:flex w-full h-0.5 mt-4 ml-2" style="background-color: var(--line-color);"></div>
-        </div>
-        <div class="mt-3 sm:pr-8 formation-item" style="color: var(--text-muted);">
-          <h3 class="text-lg font-semibold" style="color: var(--text-color);">
-            Curso de Desarrollo Web Full Stack
-          </h3>
-          <time class="block mb-2 text-sm font-normal leading-none">
-            2021
-          </time>
-          <div class="mb-2">
-            <span class="inline-block rounded-full px-3 py-1 text-sm font-semibold" style="background-color: var(--accent-color); color: var(--bg-color);">
-              Autodidacta
-            </span>
-          </div>
-          <p class="text-base font-normal">
-            Academia Y, Ciudad, País. Breve descripción del curso.
-          </p>
-        </div>
-      </li>
-
-      <li class="relative mb-6 sm:mb-0 last:mb-0 fade-up">
-        <div class="flex items-start">
-          <div class="z-10 flex items-center justify-center w-8 h-8 rounded-full shrink-0 pulse" style="background-color: var(--card-bg);">
-            <svg class="w-4 h-4" style="color: var(--accent-color);" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-            </svg>
-          </div>
-          <div class="hidden sm:flex w-full h-0.5 mt-4 ml-2" style="background-color: var(--line-color);"></div>
-        </div>
-        <div class="mt-3 sm:pr-8 formation-item" style="color: var(--text-muted);">
-          <h3 class="text-lg font-semibold" style="color: var(--text-color);">
-            Certificación en UX/UI Design
-          </h3>
-          <time class="block mb-2 text-sm font-normal leading-none">
-            2020
-          </time>
-          <div class="mb-2">
-            <span class="inline-block rounded-full px-3 py-1 text-sm font-semibold" style="background-color: var(--accent-color); color: var(--bg-color);">
-              Certificado
-            </span>
-          </div>
-          <p class="text-base font-normal">
-            Instituto Z, Ciudad, País. Breve descripción del certificado.
-          </p>
-        </div>
-      </li>
+        </li>
+      ))}
     </ol>
   </div>
 </section>
 
-<!-- Estilos y Animaciones -->
 <style>
   :root {
-    /* Modo claro (por defecto) */
     --bg-color: #ffffff;
-    --text-color: #1f2937; /* gris oscuro */
-    --text-muted: #6b7280; /* gris medio */
-    --accent-color: #2dd4bf; /* teal */
-    --card-bg: #f0fdfa; /* fondo claro para ítems */
-    --line-color: #e5e7eb; /* gris claro para líneas */
+    --text-color: #1f2937;
+    --text-muted: #6b7280;
+    --accent-color: #2dd4bf;
+    --card-bg: #f0fdfa;
+    --line-color: #e5e7eb;
   }
 
-  /* Modo oscuro */
   .dark {
-    --bg-color: #1f2937; /* gris oscuro */
-    --text-color: #f3f4f6; /* blanco grisáceo */
-    --text-muted: #9ca3af; /* gris claro */
-    --accent-color: #2dd4bf; /* teal, lo mantenemos */
-    --card-bg: #374151; /* gris medio para ítems */
-    --line-color: #4b5563; /* gris oscuro para líneas */
+    --bg-color: #1f2937;
+    --text-color: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-color: #2dd4bf;
+    --card-bg: #374151;
+    --line-color: #4b5563;
   }
 
   @keyframes fadeUp {
@@ -152,5 +118,9 @@
   }
   .formation-item:hover {
     transform: scale(1.08);
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
   }
 </style>

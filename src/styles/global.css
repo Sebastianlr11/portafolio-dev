@@ -1,2 +1,19 @@
 @import "tailwindcss";
 
+/* Definiciones de colores personalizados */
+:root {
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #1a202c;
+    --color-text-light: #000000;
+    --color-text-dark: #ffffff;
+  }
+  
+  body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+  }
+  
+  body.dark-mode {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
