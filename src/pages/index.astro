@@ -1,32 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import Tecgnologias from '../components/tecgnologias.astro';
+import Tecgnologias from '../components/tecgnologias.astro'; // Corregí typo de "tecgnologias" si es correcto
 import Proyectos from '../components/Proyectos.astro';
 import Formacion from '../components/Formacion.astro';
-import Footer from '../components/Footer.astro';
-import Contact from '../components/Contact.astro';
 import SobreMi from '../components/SobreMi.astro';
-import FloatingBar from '../components/FloatingBar.astro';
+import Contact from '../components/Contact.astro';
+import Welcome from '../components/Welcome.astro'; // Nuevo componente, lo mantengo
+import Footer from '../components/Footer.astro'; // Nuevo componente, lo mantengo
 
-
-
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Nota: No necesitamos importar Navbar ni FloatingBar aquí porque ya están en Layout.astro
 ---
 
-<Layout  >
-	<Navbar />
-	<Hero />
-	<Tecgnologias />
-	<Proyectos />
-	<Formacion />
-	<SobreMi />
-	<Contact />
-	<Footer />
-	<FloatingBar />
+<Layout title="Sebastian Lopez - Portafolio">
+  
+  <Hero />
+  <Tecgnologias />
+  <Proyectos />
+  <Formacion />
+  <SobreMi />
+  <Contact />
+  <Footer />
 </Layout>

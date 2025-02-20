@@ -1,19 +1,28 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar.astro'; // Cambié Header por Navbar
+import FloatingBar from '../components/FloatingBar.astro';
+
+const { title = "Mi Portafolio" } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Mi Portafolio</title>
+    <title>{title}</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <slot />
+    <Navbar /> <!-- Usamos Navbar en lugar de Header -->
+    <main>
+      <slot /> <!-- Contenido de la página -->
+    </main>
+    <FloatingBar />
   </body>
 </html>
 
@@ -29,18 +38,6 @@ import '../styles/global.css';
   }
 
   /* Modo oscuro */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg-color: #1f2937; /* gris oscuro */
-      --text-color: #f3f4f6; /* blanco grisáceo */
-      --text-muted: #9ca3af; /* gris claro */
-      --accent-color: #2dd4bf; /* teal, lo mantenemos */
-      --card-bg: #374151; /* gris medio para ítems */
-      --line-color: #4b5563; /* gris oscuro para líneas */
-    }
-  }
-
-  /* Clase para forzar modo oscuro manualmente */
   .dark {
     --bg-color: #1f2937;
     --text-color: #f3f4f6;
@@ -50,7 +47,6 @@ import '../styles/global.css';
     --line-color: #4b5563;
   }
 
-  /* Aplicar las variables al body */
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
