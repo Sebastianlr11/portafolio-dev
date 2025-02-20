@@ -1,0 +1,71 @@
+---
+/* Contact.astro */
+/* Frontmatter vacío, o agrega importaciones si lo necesitas */
+---
+
+<!-- Sección de Contacto -->
+<section class="py-8 bg-white font-poppins fade-in">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl font-bold text-teal-600 mb-6">¿Hablemos?</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+      Si tienes alguna pregunta, propuesta o simplemente quieres saludar, ¡no dudes en contactarme!
+    </p>
+
+    <!-- Contenedor de "botones" tipo píldora -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/in/tu-usuario"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full bg-teal-100 text-teal-600 px-4 py-2 text-sm font-semibold shadow hover:bg-teal-200 transition"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 0h-14C2.79 0 1 .79 1 2v20c0 1.21.79 2 2 2h14c1.21 0 2-.79 2-2V2c0-1.21-.79-2-2-2zM8.34 19.5H5.66v-8.5h2.68v8.5zM7 9.25c-.86 0-1.56-.7-1.56-1.56S6.14 6.13 7 6.13s1.56.7 1.56 1.56S7.86 9.25 7 9.25zm12 10.25h-2.68v-4.29c0-1.02-.02-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.25v4.37h-2.68v-8.5h2.57v1.16h.03c.36-.68 1.24-1.4 2.56-1.4 2.74 0 3.25 1.8 3.25 4.09v4.65z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+
+      <!-- GitHub -->
+      <a
+        href="https://github.com/tu-usuario"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full bg-teal-100 text-teal-600 px-4 py-2 text-sm font-semibold shadow hover:bg-teal-200 transition"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.304 3.495.997.107-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.01-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.29-1.552 3.3-1.23 3.3-1.23.653 1.652.241 2.873.118 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.81 1.096.81 2.21 0 1.596-.014 2.88-.014 3.272 0 .317.216.687.82.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+        <span>GitHub</span>
+      </a>
+
+      <!-- Correo -->
+      <a
+        href="mailto:sebastianlr051@gmail.com"
+        class="inline-flex items-center gap-2 rounded-full bg-teal-100 text-teal-600 px-4 py-2 text-sm font-semibold shadow hover:bg-teal-200 transition"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M2 4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H2zm0 2h20v.01L12 13 2 6.01V6zm0 12V8.98l9.76 6.51a1 1 0 0 0 1.09 0L22 8.98V18H2z"/>
+        </svg>
+        <span>sebastianlr051@gmail.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Animación Fade-In -->
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+</style>

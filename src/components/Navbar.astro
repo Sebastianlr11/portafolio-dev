@@ -1,0 +1,92 @@
+---
+---
+<!-- Asegúrate de incluir este enlace en el <head> de tu documento -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="global.css">
+
+<!-- Header principal con fondo blanco y una ligera sombra -->
+<header class="bg-white shadow-sm">
+  <!-- Contenedor principal con márgenes automáticos y padding responsive -->
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <!-- Contenedor flexible para alinear elementos en la misma fila -->
+    <div class="flex h-16 items-center justify-center text-center">
+
+      <!-- Navegación principal (oculta en pantallas pequeñas, visible en md+) -->
+      <div class="hidden md:block font-semibold">
+        <nav aria-label="Global">
+          <!-- Lista de enlaces de navegación -->
+          <ul class="flex items-center gap-6 text-[18px]">
+            <!-- Elementos del menú -->
+            <li>
+              <a
+                href="#"
+                class="px-3 py-1 text-gray-600 transition-colors duration-200 
+                       rounded hover:bg-teal-50 hover:text-teal-700"
+              >
+                Proyectos
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-1 text-gray-600 transition-colors duration-200 
+                       rounded hover:bg-teal-50 hover:text-teal-700"
+              >
+                Educacion
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-1 text-gray-600 transition-colors duration-200 
+                       rounded hover:bg-teal-50 hover:text-teal-700"
+              >
+                Sobre Mi
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-1 text-gray-600 transition-colors duration-200 
+                       rounded hover:bg-teal-50 hover:text-teal-700"
+              >
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Botón de menú móvil (visible en pantallas pequeñas, oculto en md+) -->
+      <div class="block md:hidden ml-auto">
+        <button
+          class="rounded bg-gray-100 p-2 text-gray-600 transition-colors duration-200 
+                     hover:text-teal-700 focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <!-- Icono de hamburguesa -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- Agrega en tu CSS esta clase para aplicar la fuente -->
+<style>
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+</header>

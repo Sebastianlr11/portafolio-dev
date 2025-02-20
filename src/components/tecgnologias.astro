@@ -1,0 +1,77 @@
+---
+---
+<!-- Importa la fuente Poppins desde Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
+
+<style>
+  /* Aplica la fuente Poppins */
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Animación de fadeIn: los elementos aparecen desde abajo con opacidad 0 a 1 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Clase para aplicar la animación fadeIn en 1 segundo */
+  .animate-fadeIn {
+    animation: fadeIn 3s ease-out forwards;
+  }
+</style>
+
+<section class="py-12 bg-white font-poppins">
+  <!-- Contenedor central -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Título y descripción de la sección -->
+    <h2 class="text-4xl font-bold text-center text-teal-600">Tecnologías</h2>
+    <p class="mt-8 text-center text-gray-500 text-xl font-medium">
+      Estas son algunas de las tecnologías con las que trabajo.
+    </p>
+    
+    <!-- Cuadrícula de logos -->
+    <div class="mt-8 grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-6 items-center justify-center">
+      <!-- Cada logo incluye la animación fadeIn y se agranda ligeramente en hover -->
+      <!-- Logo HTML -->
+      <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
+        <img src="/public/images/html5.svg" alt="HTML" class="h-16">
+      </div>
+      <!-- Logo CSS -->
+      <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
+        <img src="/public/images/css3.svg" alt="CSS" class="h-16">
+      </div>
+      <!-- Logo JavaScript -->
+      <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
+        <img src="/public/images/javascript.svg" alt="JavaScript" class="h-16">
+      </div>
+      <!-- Logo Astro -->
+      <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
+        <img src="/public/images/astro.svg" alt="Astro" class="h-16">
+      </div>
+      <!-- Logo Tailwind -->
+      <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
+        <img src="/public/images/tailwindcss.svg" alt="Tailwind CSS" class="h-16">
+      </div>
+      <!-- Logo Git -->
+      <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
+        <img src="/public/images/git.svg" alt="Git" class="h-16">
+      </div>
+      <!-- Logo GitHub -->
+      <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
+        <img src="/public/images/github.svg" alt="GitHub" class="h-16">
+      </div>
+      <!-- Logo TypeScript -->
+      <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
+        <img src="/public/images/typescript.svg" alt="TypeScript" class="h-16">
+      </div>
+    </div>
+  </div>
+</section>
+
