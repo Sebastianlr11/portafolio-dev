@@ -1,7 +1,7 @@
 ---
 /* Navbar.astro - Componente de barra de navegación */
 ---
-<header class="bg-transparent fixed top-0 w-full z-10" role="banner">
+<header class="bg-transparent absolute top-0 w-full z-10" role="banner">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <!-- Logo -->
@@ -34,22 +34,24 @@
     </nav>
   </div>
 
-  <!-- JavaScript para el menú hamburguesa -->
+  <!-- JavaScript corregido para el menú hamburguesa -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const hamburgerBtn = document.getElementById('hamburger-btn');
       const mobileMenu = document.getElementById('mobile-menu');
 
-      hamburgerBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
+      if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      } else {
+        console.error('No se encontraron los elementos hamburger-btn o mobile-menu');
+      }
     });
   </script>
 </header>
 
-<!-- Estilos opcionales en un archivo externo como styles.css -->
 <style>
-  /* Si prefieres mantener los estilos en el mismo archivo */
   nav a {
     font-size: 1rem;
   }
