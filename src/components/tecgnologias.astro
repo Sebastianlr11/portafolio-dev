@@ -1,56 +1,34 @@
 ---
+/* tecnologias.astro */
+/* Frontmatter vacío, o puedes agregar importaciones si lo requieres */
 ---
+
 <!-- Importa la fuente Poppins desde Google Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
 
-<style>
-  /* Aplica la fuente Poppins */
-  .font-poppins {
-    font-family: 'Poppins', sans-serif;
-  }
-
-  /* Animación de fadeIn: los elementos aparecen desde abajo con opacidad 0 a 1 */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Clase para aplicar la animación fadeIn en 1 segundo */
-  .animate-fadeIn {
-    animation: fadeIn 3s ease-out forwards;
-  }
-</style>
-
-
-<section class="py-2 bg-tra font-poppins">
- <!-- Fondo degradado superior: elemento decorativo posicionado en la parte alta -->
- <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-  <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg]
-              bg-gradient-to-tr from-[#cbfbf1] to-[#009689] opacity-30 
-              sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-       style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 
-                                    60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 
-                                    0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+<!-- Sección de Tecnologías -->
+<section class="py-12 bg-transparent dark:bg-gray-900 font-poppins fade-in">
+  <!-- Fondo degradado superior: elemento decorativo posicionado en la parte alta -->
+  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg]
+                bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30 
+                sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 
+                                      60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 
+                                      0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+    </div>
   </div>
-</div>
 
   <!-- Contenedor central -->
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Título y descripción de la sección -->
-    <h2 class="text-4xl font-bold text-center text-teal-600">Tecnologías</h2>
-    <p class="mt-8 text-center text-gray-500 text-xl font-medium">
+    <h2 class="text-4xl font-bold text-center text-teal-600 dark:text-teal-400">Tecnologías</h2>
+    <p class="mt-8 text-center text-gray-500 dark:text-gray-300 text-xl font-medium">
       Estas son algunas de las tecnologías con las que trabajo.
     </p>
     
     <!-- Cuadrícula de logos -->
     <div class="mt-8 grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-6 items-center justify-center">
-      <!-- Cada logo incluye la animación fadeIn y se agranda ligeramente en hover -->
       <!-- Logo HTML -->
       <div class="flex items-center justify-center transition transform duration-300 hover:scale-130 animate-fadeIn">
         <img src="html5.svg" alt="HTML" class="h-16">
@@ -85,6 +63,29 @@
       </div>
     </div>
   </div>
-  
 </section>
 
+<!-- Estilos -->
+<style>
+  /* Aplica la fuente Poppins */
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Animación de fadeIn: los elementos aparecen desde abajo con opacidad 0 a 1 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Clase para aplicar la animación fadeIn en 3 segundos */
+  .animate-fadeIn {
+    animation: fadeIn 3s ease-out forwards;
+  }
+</style>

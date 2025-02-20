@@ -17,17 +17,43 @@ import '../styles/global.css';
   </body>
 </html>
 
-<style>
-  html {
-    scroll-behavior: smooth;
+<style is:global>
+  :root {
+    /* Modo claro (por defecto) */
+    --bg-color: #ffffff;
+    --text-color: #1f2937; /* gris oscuro */
+    --text-muted: #6b7280; /* gris medio */
+    --accent-color: #2dd4bf; /* teal */
+    --card-bg: #f0fdfa; /* fondo claro para ítems */
+    --line-color: #e5e7eb; /* gris claro para líneas */
   }
-  html,
+
+  /* Modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #1f2937; /* gris oscuro */
+      --text-color: #f3f4f6; /* blanco grisáceo */
+      --text-muted: #9ca3af; /* gris claro */
+      --accent-color: #2dd4bf; /* teal, lo mantenemos */
+      --card-bg: #374151; /* gris medio para ítems */
+      --line-color: #4b5563; /* gris oscuro para líneas */
+    }
+  }
+
+  /* Clase para forzar modo oscuro manualmente */
+  .dark {
+    --bg-color: #1f2937;
+    --text-color: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-color: #2dd4bf;
+    --card-bg: #374151;
+    --line-color: #4b5563;
+  }
+
+  /* Aplicar las variables al body */
   body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .font-poppins {
-    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 </style>

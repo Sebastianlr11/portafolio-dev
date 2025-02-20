@@ -1,47 +1,49 @@
 ---
+/* proyectos.astro */
 /* Frontmatter vacío, o puedes agregar importaciones si lo requieres */
 ---
 
-
 <!-- Sección de Proyectos -->
-<section id="proyectos" class="py-8 bg-transparent font-poppins">
-  
+<section id="proyectos" class="py-12 bg-transparent dark:bg-gray-900 font-poppins fade-in">
+  <!-- Fondo degradado superior: elemento decorativo posicionado en la parte alta -->
+  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg]
+                bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30 
+                sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 
+                                      60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 
+                                      0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+    </div>
+  </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Título de la sección -->
-    <h2 class="text-4xl font-bold text-teal-600 mb-8 text-center">Proyectos</h2>
+    <h2 class="text-4xl font-bold text-teal-600 dark:text-teal-400 mb-8 text-center">Proyectos</h2>
 
     <!-- Grid de proyectos: 1 columna en móviles, 2 columnas en MD+ -->
     <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      
       <!-- Proyecto 1 (visible) -->
       <div class="project-card fade-up transform transition-all duration-300 hover:scale-105 flex flex-col md:flex-row items-center gap-6 md:gap-8">
-        <!-- Imagen -->
         <img
           src="proyecto1.png"
           alt="Newsletter Sign Up Form"
           class="w-full md:w-1/2 h-auto rounded-lg shadow-md"
         />
-        <!-- Contenido -->
         <div class="md:w-1/2">
-          <h3 class="text-xl font-medium text-teal-600">Empresa De Prendas Hospítalarias</h3>
-          <p class="mt-2 text-gray-500">
+          <h3 class="text-xl font-medium text-teal-600 dark:text-teal-300">Empresa De Prendas Hospitalarias</h3>
+          <p class="mt-2 text-gray-500 dark:text-gray-300">
             Formulario de registro a un newsletter, acompañado de un mensaje de agradecimiento.
           </p>
-          <!-- Íconos de tecnologías usadas -->
           <div class="flex flex-wrap items-center gap-2 mt-4">
             <img src="astro.svg" alt="Astro" class="h-6" />
             <img src="tailwindcss.svg" alt="Tailwind CSS" class="h-6" />
             <img src="javascript.svg" alt="JavaScript" class="h-6" />
           </div>
-          <!-- Botones para Código y Demo -->
           <div class="mt-4 flex gap-3">
-            <!-- Botón Código (GitHub) -->
             <a
               href="https://github.com/Sebastianlr11/mundial-quirurgicos"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
-              <!-- Ícono GitHub -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
@@ -61,13 +63,11 @@
               </svg>
               <span>Código</span>
             </a>
-            <!-- Botón Demo (Enlace) -->
             <a
               href="https://lucky-banoffee-bf14e9.netlify.app/"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
-              <!-- Ícono de enlace -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M10.59 13.41a1 1 0 0 1-1.42 
@@ -84,33 +84,27 @@
 
       <!-- Proyecto 2 (visible) -->
       <div class="project-card fade-up transform transition-all duration-300 hover:scale-105 flex flex-col md:flex-row items-center gap-6 md:gap-8">
-        <!-- Imagen -->
         <img
           src="proyecto1.png"
           alt="Newsletter Sign Up Form"
           class="w-full md:w-1/2 h-auto rounded-lg shadow-md"
         />
-        <!-- Contenido -->
         <div class="md:w-1/2">
-          <h3 class="text-xl font-medium text-teal-600">Empresa De Prendas Hospítalarias</h3>
-          <p class="mt-2 text-gray-500">
+          <h3 class="text-xl font-medium text-teal-600 dark:text-teal-300">Empresa De Prendas Hospitalarias</h3>
+          <p class="mt-2 text-gray-500 dark:text-gray-300">
             Formulario de registro a un newsletter, acompañado de un mensaje de agradecimiento.
           </p>
-          <!-- Íconos de tecnologías usadas -->
           <div class="flex flex-wrap items-center gap-2 mt-4">
             <img src="astro.svg" alt="Astro" class="h-6" />
             <img src="tailwindcss.svg" alt="Tailwind CSS" class="h-6" />
             <img src="javascript.svg" alt="JavaScript" class="h-6" />
           </div>
-          <!-- Botones para Código y Demo -->
           <div class="mt-4 flex gap-3">
-            <!-- Botón Código (GitHub) -->
             <a
               href="https://github.com/tu-usuario/proyecto1"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
-              <!-- Ícono GitHub -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
@@ -130,13 +124,11 @@
               </svg>
               <span>Código</span>
             </a>
-            <!-- Botón Demo (Enlace) -->
             <a
               href="https://tu-proyecto1-demo.com"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
-              <!-- Ícono de enlace -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M10.59 13.41a1 1 0 0 1-1.42 
@@ -153,33 +145,27 @@
 
       <!-- Proyecto 3 (visible) -->
       <div class="project-card fade-up transform transition-all duration-300 hover:scale-105 flex flex-col md:flex-row items-center gap-6 md:gap-8">
-        <!-- Imagen -->
         <img
           src="proyecto1.png"
           alt="Newsletter Sign Up Form"
           class="w-full md:w-1/2 h-auto rounded-lg shadow-md"
         />
-        <!-- Contenido -->
         <div class="md:w-1/2">
-          <h3 class="text-xl font-medium text-teal-600">Empresa De Prendas Hospítalarias</h3>
-          <p class="mt-2 text-gray-500">
+          <h3 class="text-xl font-medium text-teal-600 dark:text-teal-300">Empresa De Prendas Hospitalarias</h3>
+          <p class="mt-2 text-gray-500 dark:text-gray-300">
             Formulario de registro a un newsletter, acompañado de un mensaje de agradecimiento.
           </p>
-          <!-- Íconos de tecnologías usadas -->
           <div class="flex flex-wrap items-center gap-2 mt-4">
             <img src="astro.svg" alt="Astro" class="h-6" />
             <img src="tailwindcss.svg" alt="Tailwind CSS" class="h-6" />
             <img src="javascript.svg" alt="JavaScript" class="h-6" />
           </div>
-          <!-- Botones para Código y Demo -->
           <div class="mt-4 flex gap-3">
-            <!-- Botón Código (GitHub) -->
             <a
               href="https://github.com/tu-usuario/proyecto1"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
-              <!-- Ícono GitHub -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
@@ -199,13 +185,11 @@
               </svg>
               <span>Código</span>
             </a>
-            <!-- Botón Demo (Enlace) -->
             <a
               href="https://tu-proyecto1-demo.com"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
-              <!-- Ícono de enlace -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M10.59 13.41a1 1 0 0 1-1.42 
@@ -222,33 +206,27 @@
 
       <!-- Proyecto 4 (visible) -->
       <div class="project-card fade-up transform transition-all duration-300 hover:scale-105 flex flex-col md:flex-row items-center gap-6 md:gap-8">
-        <!-- Imagen -->
         <img
           src="proyecto1.png"
           alt="Newsletter Sign Up Form"
           class="w-full md:w-1/2 h-auto rounded-lg shadow-md"
         />
-        <!-- Contenido -->
         <div class="md:w-1/2">
-          <h3 class="text-xl font-medium text-teal-600">Empresa De Prendas Hospítalarias</h3>
-          <p class="mt-2 text-gray-500">
+          <h3 class="text-xl font-medium text-teal-600 dark:text-teal-300">Empresa De Prendas Hospitalarias</h3>
+          <p class="mt-2 text-gray-500 dark:text-gray-300">
             Formulario de registro a un newsletter, acompañado de un mensaje de agradecimiento.
           </p>
-          <!-- Íconos de tecnologías usadas -->
           <div class="flex flex-wrap items-center gap-2 mt-4">
             <img src="astro.svg" alt="Astro" class="h-6" />
             <img src="tailwindcss.svg" alt="Tailwind CSS" class="h-6" />
             <img src="javascript.svg" alt="JavaScript" class="h-6" />
           </div>
-          <!-- Botones para Código y Demo -->
           <div class="mt-4 flex gap-3">
-            <!-- Botón Código (GitHub) -->
             <a
               href="https://github.com/tu-usuario/proyecto1"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
-              <!-- Ícono GitHub -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
@@ -268,13 +246,11 @@
               </svg>
               <span>Código</span>
             </a>
-            <!-- Botón Demo (Enlace) -->
             <a
               href="https://tu-proyecto1-demo.com"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
-              <!-- Ícono de enlace -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M10.59 13.41a1 1 0 0 1-1.42 
@@ -288,16 +264,17 @@
           </div>
         </div>
       </div>
-      <!-- Proyecto 5 (oculto al inicio, se le agrega clase "extra") -->
-      <div class="project-card extra fade-up transform transition-all duration-300 hover:scale-105  flex-col md:flex-row items-center gap-6 md:gap-8 hidden">
+
+      <!-- Proyecto 5 (oculto al inicio, con clase "extra") -->
+      <div class="project-card extra fade-up transform transition-all duration-300 hover:scale-105 flex flex-col md:flex-row items-center gap-6 md:gap-8 hidden">
         <img
           src="proyecto1.png"
           alt="Proyecto 5"
           class="w-full md:w-1/2 h-auto rounded-lg shadow-md"
         />
         <div class="md:w-1/2">
-          <h3 class="text-2xl font-semibold">Proyecto 5</h3>
-          <p class="mt-2 text-gray-600">
+          <h3 class="text-xl font-medium text-teal-600 dark:text-teal-300">Proyecto 5</h3>
+          <p class="mt-2 text-gray-500 dark:text-gray-300">
             Breve descripción del Proyecto 5.
           </p>
           <div class="flex flex-wrap items-center gap-2 mt-4">
@@ -309,7 +286,7 @@
             <a
               href="https://github.com/tu-usuario/proyecto5"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 border border-teal-600 text-teal-600 rounded-full hover:bg-teal-50 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -333,7 +310,7 @@
             <a
               href="https://tu-proyecto5-demo.com"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 border border-teal-600 text-teal-600 rounded-full hover:bg-teal-50 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -349,16 +326,16 @@
         </div>
       </div>
 
-      <!-- Proyecto 6 (oculto al inicio, se le agrega la clase "extra") -->
-      <div class="project-card extra fade-up transform transition-all duration-300 hover:scale-105 flex-col md:flex-row items-center gap-6 md:gap-8 hidden">
+      <!-- Proyecto 6 (oculto al inicio, con clase "extra") -->
+      <div class="project-card extra fade-up transform transition-all duration-300 hover:scale-105 flex flex-col md:flex-row items-center gap-6 md:gap-8 hidden">
         <img
           src="proyecto1.png"
           alt="Proyecto 6"
           class="w-full md:w-1/2 h-auto rounded-lg shadow-md"
         />
         <div class="md:w-1/2">
-          <h3 class="text-2xl font-semibold">Proyecto 6</h3>
-          <p class="mt-2 text-gray-600">
+          <h3 class="text-xl font-medium text-teal-600 dark:text-teal-300">Proyecto 6</h3>
+          <p class="mt-2 text-gray-500 dark:text-gray-300">
             Breve descripción del Proyecto 6.
           </p>
           <div class="flex flex-wrap items-center gap-2 mt-4">
@@ -370,7 +347,7 @@
             <a
               href="https://github.com/tu-usuario/proyecto6"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 border border-teal-600 text-teal-600 rounded-full hover:bg-teal-50 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -394,7 +371,7 @@
             <a
               href="https://tu-proyecto6-demo.com"
               target="_blank"
-              class="inline-flex items-center gap-2 px-3 py-1.5 border border-teal-600 text-teal-600 rounded-full hover:bg-teal-50 transition-colors"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -413,12 +390,23 @@
 
     <!-- Botón "Ver más proyectos" -->
     <div class="mt-6 flex justify-center">
-      <button id="showMoreBtn" class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 text-teal-600 rounded-full hover:bg-teal-200 transition-colors">
+      <button id="showMoreBtn" class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/50 transition-colors">
         Ver más proyectos
       </button>
     </div>
   </div>
-  
+  <!-- Fondo degradado inferior: elemento decorativo posicionado en la parte baja -->
+  <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl 
+  sm:top-[calc(100%-30rem)]" aria-hidden="true">
+<div class="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2
+    bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30 
+    sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 
+                          72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 
+                          27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 
+                          74.1% 44.1%)">
+</div>
+</div>
 </section>
 
 <!-- Script para alternar la visibilidad de los proyectos extra -->

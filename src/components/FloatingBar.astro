@@ -1,133 +1,177 @@
+---
+/* FloatingBar.astro */
+---
+
 <div class="fixed bottom-6 left-0 right-0 w-full flex justify-center z-50">
-    <div 
-      class="flex items-center gap-4 px-6 py-3
-             bg-white/30 backdrop-blur-lg border border-white/20 
-             rounded-full shadow-xl animate-slideUp"
+  <div 
+    class="flex items-center gap-4 px-6 py-3
+           bg-white/30 dark:bg-gray-900/50 backdrop-blur-lg border border-white/20 dark:border-gray-700/50 
+           rounded-full shadow-xl animate-slideUp"
+  >
+    <!-- Botón: Copiar Correo -->
+    <button 
+      onclick="copyEmail()"
+      class="group relative text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition transform hover:scale-110"
+      aria-label="Copiar correo"
     >
-      <!-- Botón: Copiar Correo -->
-      <button 
-        onClick="copyEmail()"
-        class="group relative text-gray-800 hover:text-teal-600 transition transform hover:scale-110"
-        aria-label="Copiar correo"
-      >
-        <!-- Ícono de sobre (email) -->
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 0a2 2 0 00-2-2H5a2 2 0 00-2 2m18 0v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8"/>
-        </svg>
-        <!-- Tooltip que muestra el mensaje -->
-        <span id="email-tooltip" class="absolute bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black/80 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-          Copiar correo
-        </span>
-      </button>
-  
-      <!-- Enlace: GitHub -->
-      <a 
-        href="https://github.com/TuUsuario" 
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group relative text-gray-800 hover:text-teal-600 transition transform hover:scale-110"
-        aria-label="GitHub"
-      >
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path
-            d="M12 .297c-6.63 0-12 5.373-12 12 0 
-               5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
-               0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61
-               -.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73
-               1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.304 
-               3.495.997.107-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 
-               0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 
-               0 0 1.01-.322 3.3 1.23.96-.267 1.98-.399 
-               3-.405 1.02.006 2.04.138 3 .405 2.29-1.552 
-               3.3-1.23 3.3-1.23.653 1.652.241 2.873.118 3.176.77.84 
-               1.236 1.91 1.236 3.22 0 4.61-2.807 5.624-5.48 
-               5.92.43.37.81 1.096.81 2.21 0 1.596-.014 
-               2.88-.014 3.272 0 .317.216.687.82.57C20.565 
-               22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-          />
-        </svg>
-        <span class="absolute bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black/80 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-          GitHub
-        </span>
-      </a>
-  
-      <!-- Enlace: LinkedIn -->
-      <a 
-        href="https://linkedin.com/in/TuUsuario"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group relative text-gray-800 hover:text-teal-600 transition transform hover:scale-110"
-        aria-label="LinkedIn"
-      >
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 448 512">
-          <path
-            d="M100.28 448H7.4V148.9h92.88zM53.79 
-               108.1C24.09 108.1 0 83.5 0 54.2a53.4 
-               53.4 0 0 1 53.79-53.8c29.75 
-               0 53.79 24.6 53.79 53.8S83.54 
-               108.1 53.79 108.1zm394.09 339.9h-92.68V302.4c0-34.7-12.44-58.4
-               -43.56-58.4-23.74 0-37.86 16-44.1 31.4
-               -2.27 5.6-2.84 13.4-2.84 21.3v151.3h-92.78s1.24
-               -245.6 0-270.9h92.78v38.4c-.19.3-.46.6-.65.9h.65v-.9
-               c12.32-19 34.4-46.2 83.62-46.2 61 0 106.48 39.8 
-               106.48 125.2v153.5z"
-          />
-        </svg>
-        <span class="absolute bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black/80 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-          LinkedIn
-        </span>
-      </a>
-  
-      <!-- Enlace: Descargar CV -->
-      <a
-        href="/ruta/a/tuCV.pdf"
-        download="Mi_CV.pdf"
-        class="group relative text-gray-800 hover:text-teal-600 transition transform hover:scale-110"
-        aria-label="Descargar CV"
-      >
-        <!-- Ícono de descarga -->
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 16l4-4h-3V4h-2v8H8l4 4zM4 20h16v-2H4v2z" />
-        </svg>
-        <span class="absolute bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black/80 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-          Descargar CV
-        </span>
-      </a>
-    </div>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 0a2 2 0 00-2-2H5a2 2 0 00-2 2m18 0v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8"/>
+      </svg>
+      <span id="email-tooltip" class="absolute bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black/80 dark:bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+        Copiar correo
+      </span>
+    </button>
+
+    <!-- Enlace: GitHub -->
+    <a 
+      href="https://github.com/TuUsuario" 
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition transform hover:scale-110"
+      aria-label="GitHub"
+    >
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M12 .297c-6.63 0-12 5.373-12 12 0 
+             5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
+             0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61
+             -.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73
+             1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.304 
+             3.495.997.107-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 
+             0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 
+             0 0 1.01-.322 3.3 1.23.96-.267 1.98-.399 
+             3-.405 1.02.006 2.04.138 3 .405 2.29-1.552 
+             3.3-1.23 3.3-1.23.653 1.652.241 2.873.118 3.176.77.84 
+             1.236 1.91 1.236 3.22 0 4.61-2.807 5.624-5.48 
+             5.92.43.37.81 1.096.81 2.21 0 1.596-.014 
+             2.88-.014 3.272 0 .317.216.687.82.57C20.565 
+             22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+        />
+      </svg>
+      <span class="absolute bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black/80 dark:bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+        GitHub
+      </span>
+    </a>
+
+    <!-- Enlace: LinkedIn -->
+    <a 
+      href="https://linkedin.com/in/TuUsuario"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition transform hover:scale-110"
+      aria-label="LinkedIn"
+    >
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 448 512">
+        <path
+          d="M100.28 448H7.4V148.9h92.88zM53.79 
+             108.1C24.09 108.1 0 83.5 0 54.2a53.4 
+             53.4 0 0 1 53.79-53.8c29.75 
+             0 53.79 24.6 53.79 53.8S83.54 
+             108.1 53.79 108.1zm394.09 339.9h-92.68V302.4c0-34.7-12.44-58.4
+             -43.56-58.4-23.74 0-37.86 16-44.1 31.4
+             -2.27 5.6-2.84 13.4-2.84 21.3v151.3h-92.78s1.24
+             -245.6 0-270.9h92.78v38.4c-.19.3-.46.6-.65.9h.65v-.9
+             c12.32-19 34.4-46.2 83.62-46.2 61 0 106.48 39.8 
+             106.48 125.2v153.5z"
+        />
+      </svg>
+      <span class="absolute bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black/80 dark:bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+        LinkedIn
+      </span>
+    </a>
+
+    <!-- Enlace: Descargar CV -->
+    <a
+      href="/ruta/a/tuCV.pdf"
+      download="Mi_CV.pdf"
+      class="group relative text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition transform hover:scale-110"
+      aria-label="Descargar CV"
+    >
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 16l4-4h-3V4h-2v8H8l4 4zM4 20h16v-2H4v2z" />
+      </svg>
+      <span class="absolute bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black/80 dark:bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+        Descargar CV
+      </span>
+    </a>
+
+    <!-- Botón: Alternar Modo Oscuro -->
+    <button 
+      id="theme-toggle"
+      class="group relative text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition transform hover:scale-110"
+      aria-label="Alternar modo oscuro"
+    >
+      <!-- Ícono de sol (visible en modo claro) -->
+      <svg id="sun-icon" class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+      </svg>
+      <!-- Ícono de luna (visible en modo oscuro) -->
+      <svg id="moon-icon" class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+      </svg>
+    </button>
   </div>
-  
-  <script is:inline>
-    function copyEmail() {
-      const email = "tuCorreo@ejemplo.com"; // Reemplaza con tu correo real
-      navigator.clipboard.writeText(email)
-        .then(() => {
-          const tooltip = document.getElementById("email-tooltip");
-          tooltip.innerText = "¡Correo copiado!";
-          tooltip.style.opacity = "1";
-          setTimeout(() => {
-            tooltip.innerText = "Copiar correo";
-            tooltip.style.opacity = "";
-          }, 2000);
-        })
-        .catch((err) => {
-          console.error("Error al copiar el correo", err);
-        });
+</div>
+
+<script is:inline>
+  // Función para copiar el correo
+  function copyEmail() {
+    const email = "tuCorreo@ejemplo.com"; // Reemplaza con tu correo real
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        const tooltip = document.getElementById("email-tooltip");
+        tooltip.innerText = "¡Correo copiado!";
+        tooltip.style.opacity = "1";
+        setTimeout(() => {
+          tooltip.innerText = "Copiar correo";
+          tooltip.style.opacity = "";
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error("Error al copiar el correo", err);
+      });
+  }
+
+  // Manejo del modo oscuro
+  const htmlElement = document.documentElement;
+  const themeToggle = document.getElementById("theme-toggle");
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
+
+  // Verificar preferencia inicial
+  if (localStorage.getItem('theme') === 'dark' || 
+      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    htmlElement.classList.add('dark');
+    sunIcon.classList.add('hidden');
+    moonIcon.classList.remove('hidden');
+  } else {
+    htmlElement.classList.remove('dark');
+    sunIcon.classList.remove('hidden');
+    moonIcon.classList.add('hidden');
+  }
+
+  // Alternar tema al hacer clic
+  themeToggle.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark');
+    const isDark = htmlElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    sunIcon.classList.toggle('hidden', isDark);
+    moonIcon.classList.toggle('hidden', !isDark);
+  });
+</script>
+
+<style>
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
     }
-  </script>
-  
-  <style>
-    @keyframes slideUp {
-      0% {
-        transform: translateY(100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
     }
-    .animate-slideUp {
-      animation: slideUp 0.8s ease-out forwards;
-    }
-  </style>
-  
+  }
+  .animate-slideUp {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+</style>
