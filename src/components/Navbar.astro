@@ -1,52 +1,56 @@
 ---
 /* Navbar.astro - Componente de barra de navegación */
 ---
-
-<header class="bg-transparent  fixed top-0 w-full z-10" role="banner">
-<head>
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/script.js" defer></script>
-</head>
-
-<header role="banner">
+<header class="bg-transparent fixed top-0 w-full z-10" role="banner">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
       <div class="text-2xl font-bold text-teal-600 dark:text-teal-400">Dev</div>
 
+      <!-- Navegación de escritorio -->
       <nav class="hidden md:flex space-x-6" aria-label="Main navigation">
-        <a href="#proyectos">Proyectos</a>
-        <a href="#educacion">Educación</a>
-        <a href="#sobre-mi">Sobre Mí</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#proyectos" class="text-gray-900 dark:text-gray-100 hover:text-teal-600 dark:hover:text-teal-400 transition">Proyectos</a>
+        <a href="#educacion" class="text-gray-900 dark:text-gray-100 hover:text-teal-600 dark:hover:text-teal-400 transition">Educación</a>
+        <a href="#sobre-mi" class="text-gray-900 dark:text-gray-100 hover:text-teal-600 dark:hover:text-teal-400 transition">Sobre Mí</a>
+        <a href="#contacto" class="text-gray-900 dark:text-gray-100 hover:text-teal-600 dark:hover:text-teal-400 transition">Contacto</a>
       </nav>
 
-      <div class="md:flex items-center space-x-4">
-        <button id="theme-toggle" class="theme-button" aria-label="Toggle tema">
-          <svg id="sun-icon" class="h-6 w-6 hidden dark:block" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-          </svg>
-          <svg id="moon-icon" class="h-6 w-6 block dark:hidden" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="md:hidden">
-        <button id="menu-btn" class="theme-button" aria-label="Toggle menú">
-          <svg class="h-6 w-6" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
+      <!-- Botón hamburguesa para móviles -->
+      <button id="hamburger-btn" class="md:hidden text-gray-900 dark:text-gray-100 focus:outline-none" aria-label="Toggle mobile menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
     </div>
 
-    <nav id="mobile-menu" class="hidden md:hidden bg-black/50 dark:bg-gray-800/80 p-4 rounded-2xl">
+    <!-- Menú móvil -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-black/50 dark:bg-gray-800/80 p-4 rounded-2xl mt-2" aria-label="Mobile navigation">
       <ul class="space-y-2">
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#educacion">Educación</a></li>
-        <li><a href="#sobre-mi">Sobre Mí</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#proyectos" class="block text-gray-100 hover:text-teal-400 transition">Proyectos</a></li>
+        <li><a href="#educacion" class="block text-gray-100 hover:text-teal-400 transition">Educación</a></li>
+        <li><a href="#sobre-mi" class="block text-gray-100 hover:text-teal-400 transition">Sobre Mí</a></li>
+        <li><a href="#contacto" class="block text-gray-100 hover:text-teal-400 transition">Contacto</a></li>
       </ul>
     </nav>
   </div>
+
+  <!-- JavaScript para el menú hamburguesa -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
 </header>
+
+<!-- Estilos opcionales en un archivo externo como styles.css -->
+<style>
+  /* Si prefieres mantener los estilos en el mismo archivo */
+  nav a {
+    font-size: 1rem;
+  }
+</style>
