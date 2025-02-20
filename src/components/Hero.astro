@@ -62,7 +62,7 @@
       </div>
 
       <!-- Contenedor principal del contenido Hero: imagen y texto -->
-<div class="mx-auto max-w-6xl py-8 sm:py-8 lg:py-8 flex flex-col items-center gap-8">
+<div class="mx-auto max-w-6xl py-16 sm:py-16 lg:py-16 flex flex-col items-center gap-8">
   
     <!-- Contenedor de la imagen (siempre aparecerá primero) -->
     <div class="relative w-full max-w-lg flex justify-center">
@@ -98,7 +98,7 @@
       <!-- Redes y contacto (botones tipo "pill") -->
       <div class="mt-6 flex flex-wrap items-center justify-center gap-6 py-6">
         <!-- Botón LinkedIn -->
-        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank"
+        <a href="https://www.linkedin.com/in/sebastian-lopez-9969151b0/" target="_blank"
            class="inline-flex items-center gap-2 rounded-full bg-teal-100 px-4 py-2 text-teal-600 hover:bg-teal-200 transition">
           <!-- Ícono LinkedIn (SVG) -->
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -113,7 +113,7 @@
         </a>
       
         <!-- Botón GitHub -->
-        <a href="https://github.com/tu-usuario" target="_blank"
+        <a href="https://github.com/Sebastianlr11" target="_blank"
            class="inline-flex items-center gap-2 rounded-full bg-teal-100 px-4 py-2 text-teal-600 hover:bg-teal-200 transition">
           <!-- Ícono GitHub (SVG) -->
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -133,22 +133,48 @@
           <span>GitHub</span>
         </a>
       
-        <!-- Botón Correo -->
-        <a href="mailto:sebastianlr051@gmail.com"
-           class="inline-flex items-center gap-2 rounded-full bg-teal-100 px-4 py-2 text-teal-600 hover:bg-teal-200 transition">
-          <!-- Ícono Correo (SVG) -->
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M2 4c-1.1 0-2 .9-2 
-                     2v12c0 1.1.9 2 2 2h20c1.1 
-                     0 2-.9 2-2V6c0-1.1-.9-2-2-2H2zm0 
-                     2h20v.01L12 13 2 6.01V6zm0 
-                     12V8.98l9.76 6.51a1 1 0 001.09 0L22 
-                     8.98V18H2z" />
-          </svg>
-          <span>sebastianlr051@gmail.com</span>
-        </a>
-      </div>
-    </div>
+<!-- Botón que copia el correo -->
+<a href="#" id="copy-email"
+   class="inline-flex items-center gap-2 rounded-full bg-teal-100 px-4 py-2 text-teal-600 hover:bg-teal-200 transition">
+  <!-- Ícono Correo (SVG) -->
+  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M2 4c-1.1 0-2 .9-2 
+             2v12c0 1.1.9 2 2 2h20c1.1 
+             0 2-.9 2-2V6c0-1.1-.9-2-2-2H2zm0 
+             2h20v.01L12 13 2 6.01V6zm0 
+             12V8.98l9.76 6.51a1 1 0 001.09 0L22 
+             8.98V18H2z" />
+  </svg>
+  <span>sebastianlr051@gmail.com</span>
+</a>
+
+<!-- Mensaje que se muestra al copiar -->
+<div id="copied-message" class="hidden text-teal-600 mt-2">¡Correo copiado!</div>
+
+<!-- Script para copiar y mostrar mensaje -->
+<script>
+  document.getElementById('copy-email').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita la acción por defecto del enlace
+    const email = "sebastianlr051@gmail.com";
+
+    // Utilizamos la API del portapapeles
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        // Mostrar mensaje de copiado
+        const messageEl = document.getElementById('copied-message');
+        messageEl.classList.remove('hidden');
+
+        // Ocultar el mensaje después de 2 segundos
+        setTimeout(() => {
+          messageEl.classList.add('hidden');
+        }, 2000);
+      })
+      .catch(err => {
+        console.error('Error al copiar el correo: ', err);
+      });
+  });
+</script>
+
   
     <!-- Fondo degradado inferior: elemento decorativo posicionado en la parte baja -->
     <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl 
