@@ -1,0 +1,49 @@
+---
+interface Technology {
+  src: string;
+  alt?: string; // Opcional, si necesitas un alt más específico
+}
+
+const { src, alt, title, description, technologies, github, demo, extra } = Astro.props as {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+  technologies: string[]; // Especificamos que technologies es un array de strings
+  github: string;
+  demo: string;
+  extra: boolean | undefined;
+};
+---
+
+<div class={`project-card fade-up transform transition-all duration-300 hover:scale-105 flex flex-col md:flex-row items-center gap-6 md:gap-8 ${extra ? 'extra hidden' : ''}`}>
+  <img src={src} alt={alt} class="w-full md:w-1/2 h-auto rounded-lg shadow-md" />
+  <div class="md:w-1/2">
+    <h3 class="text-xl font-medium text-teal-600 dark:text-teal-300">{title}</h3>
+    <p class="mt-2 text-gray-500 dark:text-gray-300">{description}</p>
+    <div class="flex flex-wrap items-center gap-2 mt-4">
+      {technologies.map((tech: string) => { // Especificamos explícitamente que tech es un string
+        const techName = tech.split('/').pop()?.split('.')[0] || 'Technology';
+        return (
+          <img src={tech} alt={techName} class="h-6 w-6 object-contain" aria-label={techName} role="img" />
+        );
+      })}
+    </div>
+    <div class="mt-4 flex gap-3">
+      <a href={github} target="_blank"
+         class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/80 transition-colors" aria-label="Código fuente">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.304 3.495.997.107-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.01-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.29-1.552 3.3-1.23 3.3-1.23.653 1.652.241 2.873.118 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.81 1.096.81 2.21 0 1.596-.014 2.88-.014 3.272 0 .317.216.687.82.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+        </svg>
+        <span>Código</span>
+      </a>
+      <a href={demo} target="_blank"
+         class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/80 transition-colors" aria-label="Demo">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M10.59 13.41a1 1 0 0 1-1.42 1.42l-4-4a1 1 0 0 1 0-1.42l4-4a1 1 0 1 1 1.42 1.42L8.42 9H20a1 1 0 1 1 0 2H8.41l2.18 2.41z" />
+        </svg>
+        <span>Demo</span>
+      </a>
+    </div>
+  </div>
+</div>

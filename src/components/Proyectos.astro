@@ -1,10 +1,10 @@
 ---
-/* proyectos.astro */
-/* Frontmatter vacío, o puedes agregar importaciones si lo requieres */
+import { projects } from '../data/projects';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
 <!-- Sección de Proyectos -->
-<section id="proyectos" class="py-8 bg-transparent dark:bg-gray-900 font-poppins fade-in">
+<section id="proyectos" class="py-8 bg-transparent dark:bg-gray-900 fade-in">
   <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
     <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg]
                 bg-gradient-to-tr from-[#cbfbf1] to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf] opacity-30
@@ -16,100 +16,25 @@
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-5xl py-10 font-bold text-teal-600 dark:text-teal-400 mb-8 text-center">Proyectos</h2>
+    <h2 class="text-5xl py-10 font-bold text-teal-600 dark:text-teal-400 mb-8 text-center font-poppins">Proyectos</h2>
 
     <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {[
-        {
-          src: "proyecto1.png",
-          alt: "Empresa De Prendas Hospitalarias",
-          title: "Empresa De Prendas Hospitalarias",
-          description: "Formulario de registro a un newsletter, acompañado de un mensaje de agradecimiento.",
-          technologies: ["astro.svg", "tailwindcss.svg", "javascript.svg"],
-          github: "https://github.com/Sebastianlr11/mundial-quirurgicos",
-          demo: "https://lucky-banoffee-bf14e9.netlify.app/"
-        },
-        {
-          src: "proyecto1.png",
-          alt: "Proyecto 2",
-          title: "Proyecto 2",
-          description: "Breve descripción del Proyecto 2.",
-          technologies: ["astro.svg", "tailwindcss.svg", "javascript.svg"],
-          github: "https://github.com/tu-usuario/proyecto2",
-          demo: "https://tu-proyecto2-demo.com"
-        },
-        {
-          src: "proyecto1.png",
-          alt: "Proyecto 3",
-          title: "Proyecto 3",
-          description: "Breve descripción del Proyecto 3.",
-          technologies: ["astro.svg", "tailwindcss.svg", "javascript.svg"],
-          github: "https://github.com/tu-usuario/proyecto3",
-          demo: "https://tu-proyecto3-demo.com"
-        },
-        {
-          src: "proyecto1.png",
-          alt: "Proyecto 4",
-          title: "Proyecto 4",
-          description: "Breve descripción del Proyecto 4.",
-          technologies: ["astro.svg", "tailwindcss.svg", "javascript.svg"],
-          github: "https://github.com/tu-usuario/proyecto4",
-          demo: "https://tu-proyecto4-demo.com"
-        },
-        {
-          src: "proyecto1.png",
-          alt: "Proyecto 5",
-          title: "Proyecto 5",
-          description: "Breve descripción del Proyecto 5.",
-          technologies: ["astro.svg", "tailwindcss.svg", "javascript.svg"],
-          github: "https://github.com/tu-usuario/proyecto5",
-          demo: "https://tu-proyecto5-demo.com",
-          extra: true
-        },
-        {
-          src: "proyecto1.png",
-          alt: "Proyecto 6",
-          title: "Proyecto 6",
-          description: "Breve descripción del Proyecto 6.",
-          technologies: ["astro.svg", "tailwindcss.svg", "javascript.svg"],
-          github: "https://github.com/tu-usuario/proyecto6",
-          demo: "https://tu-proyecto6-demo.com",
-          extra: true
-        }
-      ].map(({ src, alt, title, description, technologies, github, demo, extra }) => (
-        <div class={`project-card fade-up transform transition-all duration-300 hover:scale-105 flex flex-col md:flex-row items-center gap-6 md:gap-8 ${extra ? 'extra hidden' : ''}`} key={alt}>
-          <img src={src} alt={alt} class="w-full md:w-1/2 h-auto rounded-lg shadow-md" />
-          <div class="md:w-1/2">
-            <h3 class="text-xl font-medium text-teal-600 dark:text-teal-300">{title}</h3>
-            <p class="mt-2 text-gray-500 dark:text-gray-300">{description}</p>
-            <div class="flex flex-wrap items-center gap-2 mt-4">
-              {technologies.map(tech => (
-                <img src={tech} alt={tech.split('.')[0]} class="h-6" aria-label={tech.split('.')[0]} role="img" />
-              ))}
-            </div>
-            <div class="mt-4 flex gap-3">
-              <a href={github} target="_blank"
-                 class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/80 transition-colors" aria-label="Código fuente">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.304 3.495.997.107-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.01-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.29-1.552 3.3-1.23 3.3-1.23.653 1.652.241 2.873.118 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.81 1.096.81 2.21 0 1.596-.014 2.88-.014 3.272 0 .317.216.687.82.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-                <span>Código</span>
-              </a>
-              <a href={demo} target="_blank"
-                 class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/80 transition-colors" aria-label="Demo">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M10.59 13.41a1 1 0 0 1-1.42 1.42l-4-4a1 1 0 0 1 0-1.42l4-4a1 1 0 1 1 1.42 1.42L8.42 9H20a1 1 0 1 1 0 2H8.41l2.18 2.41z" />
-                </svg>
-                <span>Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
+      {projects.map((project) => (
+        <ProjectCard 
+          src={project.src} 
+          alt={project.alt} 
+          title={project.title} 
+          description={project.description} 
+          technologies={project.technologies} 
+          github={project.github} 
+          demo={project.demo} 
+          extra={project.extra || false} 
+        />
       ))}
     </div>
 
     <div class="mt-6 flex justify-center py-12">
-      <button id="showMoreBtn" class="inline-flex items-center  gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/80 transition-colors">
+      <button id="showMoreBtn" class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-100 dark:bg-teal-800/50 text-teal-600 dark:text-teal-300 rounded-full hover:bg-teal-200 dark:hover:bg-teal-700/80 transition-colors">
         Ver más proyectos
       </button>
     </div>
@@ -125,39 +50,24 @@
                                       0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById("showMoreBtn");
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+          const extraProjects = document.querySelectorAll(".project-card.extra");
+          if (extraProjects.length > 0) {
+            const areHidden = extraProjects[0].classList.contains("hidden");
+            extraProjects.forEach(card => {
+              card.classList.toggle("hidden", !areHidden);
+            });
+            toggleBtn.textContent = areHidden ? "Ocultar proyectos" : "Ver más proyectos";
+          }
+        });
+      } else {
+        console.warn('No se encontró el botón #showMoreBtn en el DOM.');
+      }
+    });
+  </script>
 </section>
-
-<script is:inline>
-  const toggleBtn = document.getElementById("showMoreBtn");
-  toggleBtn?.addEventListener("click", () => {
-    const extraProjects = document.querySelectorAll(".project-card.extra");
-    if (extraProjects.length > 0 && extraProjects[0].classList.contains("hidden")) {
-      extraProjects.forEach(card => card.classList.remove("hidden"));
-      toggleBtn.textContent = "Ocultar proyectos";
-    } else {
-      extraProjects.forEach(card => card.classList.add("hidden"));
-      toggleBtn.textContent = "Ver más proyectos";
-    }
-  });
-</script>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
-  }
-  .font-poppins {
-    font-family: 'Poppins', sans-serif;
-  }
-</style>
