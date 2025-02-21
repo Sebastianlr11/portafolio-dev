@@ -1,48 +1,26 @@
-# Astro Starter Kit: Basics
+# Nombre de tu Proyecto
 
-```sh
-npm create astro@latest -- --template basics
-```
+[![Licencia](URL_de_tu_insignia_de_licencia)](ENLACE_a_tu_licencia)
+[![Estado del Proyecto](URL_de_insignia_de_estado)](ENLACE_a_otra_información)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Una descripción corta y atractiva de lo que hace tu proyecto.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tabla de Contenidos
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+*   [Descripción](#descripción)
+*   [Instalación](#instalación)
+*   [Uso](#uso)
+*   [Contribución](#contribución)
+*   [Licencia](#licencia)
+*   [Créditos](#créditos) (Opcional)
+*   [Contacto](#contacto) (Opcional)
 
-## 🚀 Project Structure
+## Descripción
 
-Inside of your Astro project, you'll see the following folders and files:
+Una descripción más detallada de tu proyecto. Explica qué problema resuelve, cuáles son sus características principales y qué lo hace diferente.  Usa ejemplos si es posible.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Instalación
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Instrucciones paso a paso sobre cómo instalar tu proyecto. Incluye requisitos previos, comandos de instalación y cualquier configuración necesaria.
 
-## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
