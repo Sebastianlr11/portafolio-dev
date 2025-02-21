@@ -25,3 +25,40 @@ body {
 .nav-link:hover {
   color: var(--teal-color);
 }
+
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.fade-in-scale {
+  animation: fadeInScale 1.5s ease-out forwards;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}

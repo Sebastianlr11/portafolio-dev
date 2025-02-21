@@ -1,0 +1,10 @@
+---
+const { image } = Astro.props;
+---
+
+<div class="relative w-full max-w-lg flex justify-center animate-fadeIn">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#cbfbf1] via-transparent to-[#009689] dark:from-[#1f3a44] dark:to-[#2dd4bf]
+              rounded-full blur-3xl opacity-50 w-80 h-80"></div>
+  <img src={image} alt="Foto de Sebastian Lopez"
+       class="relative w-90 h-90 rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-800 fade-in-scale">
+</div>
