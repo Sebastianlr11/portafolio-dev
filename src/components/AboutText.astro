@@ -1,0 +1,22 @@
+---
+const { paragraphs, cvLink, cvLabel } = Astro.props as {
+  paragraphs: string[]; // Especificamos que paragraphs es un array de strings
+  cvLink: string;
+  cvLabel: string;
+};
+---
+
+<div class="text-left max-w-xl">
+  {paragraphs.map((paragraph: string, index: number) => ( // Especificamos explícitamente los tipos
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+      {paragraph}
+    </p>
+  ))}
+  <a href={cvLink} target="_blank"
+     class="inline-flex items-center gap-2 px-6 py-2 bg-teal-100 dark:bg-teal-800/50 text-teal-700 dark:text-teal-300 rounded-full shadow hover:bg-teal-200 dark:hover:bg-teal-700/80 transition-colors text-sm font-semibold" aria-label={cvLabel}>
+    {cvLabel}
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 16l4-4h-3V4h-2v8H8l4 4zM4 20h16v-2H4v2z" />
+    </svg>
+  </a>
+</div>
