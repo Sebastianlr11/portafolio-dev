@@ -1,0 +1,10 @@
+---
+const { mobile } = Astro.props;
+---
+
+<ul class={mobile ? "space-y-2" : "flex space-x-6"}>
+  <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+  <li><a href="#educacion" class="nav-link">Educación</a></li>
+  <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+  <li><a href="#contacto" class="nav-link">Contacto</a></li>
+</ul>

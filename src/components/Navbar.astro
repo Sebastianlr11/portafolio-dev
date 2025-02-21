@@ -1,6 +1,7 @@
 ---
-/* Navbar.astro - Componente de barra de navegación mejorado */
+import NavLinks from './NavLinks.astro';
 ---
+
 <header class="bg-transparent absolute top-0 w-full z-10" role="banner">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
@@ -9,15 +10,17 @@
 
       <!-- Navegación de escritorio -->
       <nav class="hidden md:flex space-x-6" aria-label="Main navigation">
-        <a href="#proyectos" class="nav-link">Proyectos</a>
-        <a href="#educacion" class="nav-link">Educación</a>
-        <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+        <NavLinks />
       </nav>
 
       <!-- Botón hamburguesa para móviles -->
-      <button id="hamburger-btn" class="md:hidden text-gray-900 dark:text-gray-100 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <button
+        id="hamburger-btn"
+        class="md:hidden text-gray-900 dark:text-gray-100 focus:outline-none"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
@@ -25,36 +28,10 @@
 
     <!-- Menú móvil -->
     <nav id="mobile-menu" class="hidden md:hidden bg-black/50 dark:bg-gray-800/80 p-4 rounded-2xl mt-2" aria-label="Mobile navigation">
-      <ul class="space-y-2">
-        <li><a href="#proyectos" class="block text-gray-100 hover:text-teal-400 transition nav-link">Proyectos</a></li>
-        <li><a href="#educacion" class="block text-gray-100 hover:text-teal-400 transition nav-link">Educación</a></li>
-        <li><a href="#sobre-mi" class="block text-gray-100 hover:text-teal-400 transition nav-link">Sobre Mí</a></li>
-        <li><a href="#contacto" class="block text-gray-100 hover:text-teal-400 transition nav-link">Contacto</a></li>
-      </ul>
+      <NavLinks mobile={true} />
     </nav>
   </div>
-
-  <!-- JavaScript mejorado para el menú hamburguesa -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hamburgerBtn = document.getElementById('hamburger-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      if (hamburgerBtn && mobileMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-          const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-          hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
-          mobileMenu.classList.toggle('hidden');
-        });
-      } else {
-        console.error('No se encontraron los elementos hamburger-btn o mobile-menu');
-      }
-    });
-  </script>
 </header>
 
-<style>
-.nav-link {
-  text-gray-900 dark:text-gray-100 hover:text-teal-600 dark:hover:text-teal-400 transition;
-}
-</style>
+<script src="/src/scripts/navbar.js" type="module"></script>
+ 
