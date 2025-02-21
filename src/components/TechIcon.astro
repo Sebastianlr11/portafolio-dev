@@ -1,0 +1,15 @@
+---
+const { src, alt, label } = Astro.props;
+---
+
+<div class="group relative flex flex-col items-center justify-center transition-all duration-300 ease-in-out hover:scale-130 animate-fade-in">
+  <img 
+    src={src} 
+    alt={alt} 
+    class="h-14 w-14 object-contain transition-all duration-300 group-hover:drop-shadow-xl" 
+    loading="lazy"
+  />
+  <span class="mt-2 text-sm text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    {label}
+  </span>
+</div>
