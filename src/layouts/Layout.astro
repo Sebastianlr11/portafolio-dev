@@ -1,6 +1,5 @@
 ---
 export let title = "Sebastian Lopez - Portafolio";
-export let darkMode = false;
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import FloatingBar from "../components/FloatingBar.astro";
@@ -31,11 +30,50 @@ import FloatingBar from "../components/FloatingBar.astro";
     <title>{title}</title>
   </head>
   
-  <body class:list={{ dark: darkMode }}>
+  <body>
     <Navbar />
     <main>
       <slot /> <!-- Contenido dinámico de la página -->
     </main>
     <FloatingBar />
+    
+    <!-- Script para manejar el modo oscuro -->
+    <script>
+      // Cargar el tema guardado o la preferencia del sistema
+      if (localStorage.getItem('theme') === 'dark' || 
+          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.classList.add('dark');
+      }
+
+      // Escuchar cambios en la preferencia del sistema (opcional)
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) { // Solo si no hay preferencia manual
+          document.body.classList.toggle('dark', e.matches);
+        }
+      });
+    </script>
   </body>
 </html>
+
+<style>
+  /* Estilos básicos con variables CSS */
+  :root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --navbar-bg: #f5f5f5; /* Ejemplo para Navbar */
+    --floatingbar-bg: #e0e0e0; /* Ejemplo para FloatingBar */
+  }
+
+  .dark {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --navbar-bg: #333333;
+    --floatingbar-bg: #444444;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
