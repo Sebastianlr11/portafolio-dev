@@ -1,6 +1,6 @@
 ---
 /* tecnologias.astro */
-/* Puedes agregar importaciones aquí si lo requieres */
+/* Importaciones mínimas necesarias */
 ---
 
 <!-- Sección de Tecnologías -->
@@ -16,25 +16,37 @@
     </div>
   </div>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h2 class="text-5xl font-bold text-center text-teal-600 dark:text-teal-400">Tecnologías</h2>
-    <p class="mt-8 text-center text-gray-500 dark:text-gray-300 text-2xl font-medium">
-      Estas son algunas de las tecnologías con las que trabajo.
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Encabezado más limpio y accesible -->
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-teal-600 dark:text-teal-400 tracking-tight">
+      Tecnologías
+    </h2>
+    <p class="mt-6 text-center text-gray-600 dark:text-gray-300 text-xl md:text-2xl font-medium max-w-3xl mx-auto">
+      Una selección de las herramientas y tecnologías que utilizo en mis proyectos.
     </p>
 
-    <div class="mt-8 grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-6 items-center justify-center">
+    <!-- Grid responsivo y accesible -->
+    <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-8 justify-items-center">
       {[
-        { src: "html5.svg", alt: "HTML" },
-        { src: "css3.svg", alt: "CSS" },
-        { src: "javascript.svg", alt: "JavaScript" },
-        { src: "astro.svg", alt: "Astro" },
-        { src: "tailwindcss.svg", alt: "Tailwind CSS" },
-        { src: "git.svg", alt: "Git" },
-        { src: "github.svg", alt: "GitHub" },
-        { src: "typescript.svg", alt: "TypeScript" }
-      ].map(({ src, alt }) => (
-        <div class="flex items-center justify-center transition transform duration-500 ease-in-out hover:scale-130 animate-fadeIn" key={alt}>
-          <img src={src} alt={alt} class="h-16" aria-label={alt} role="img" />
+        { src: "html5.svg", alt: "HTML5", label: "HTML5" },
+        { src: "css3.svg", alt: "CSS3", label: "CSS3" },
+        { src: "javascript.svg", alt: "JavaScript", label: "JavaScript" },
+        { src: "astro.svg", alt: "Astro", label: "Astro" },
+        { src: "tailwindcss.svg", alt: "Tailwind CSS", label: "Tailwind CSS" },
+        { src: "git.svg", alt: "Git", label: "Git" },
+        { src: "github.svg", alt: "GitHub", label: "GitHub" },
+        { src: "typescript.svg", alt: "TypeScript", label: "TypeScript" }
+      ].map((tech) => (
+        <div class="group relative flex flex-col items-center justify-center transition-all duration-300 ease-in-out hover:scale-110 animate-fade-in">
+          <img 
+            src={tech.src} 
+            alt={tech.alt} 
+            class="h-14 w-14 object-contain transition-all duration-300 group-hover:drop-shadow-xl" 
+            loading="lazy"
+          />
+          <span class="mt-2 text-sm text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {tech.label}
+          </span>
         </div>
       ))}
     </div>
@@ -48,10 +60,11 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  @keyframes fadeIn {
+  /* Animación más fluida */
+  @keyframes fade-in {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(15px);
     }
     to {
       opacity: 1;
@@ -59,7 +72,12 @@
     }
   }
 
-  .animate-fadeIn {
-    animation: fadeIn 3s ease-out forwards;
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  /* Mejorar contraste y legibilidad */
+  :where(.dark) .text-gray-300 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 </style>
