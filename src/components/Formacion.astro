@@ -1,6 +1,6 @@
 ---
-/* educacion.astro */
-/* Frontmatter vacío, o agrega variables/importaciones si lo necesitas */
+import { education } from '../data/education';
+import EducationItem from '../components/EducationItem.astro';
 ---
 
 <!-- Sección de Formación -->
@@ -22,148 +22,17 @@
       Formación
     </h2>
     <ol class="sm:flex items-start gap-6">
-      {[
-        {
-          title: "Licenciatura en Ingeniería de Software",
-          date: "2023",
-          certification: "Certificado",
-          institution: "Universidad X, Ciudad, País",
-          description: "Breve descripción de la carrera."
-        },
-        {
-          title: "Curso de Desarrollo Web Full Stack",
-          date: "2021",
-          certification: "Autodidacta",
-          institution: "Academia Y, Ciudad, País",
-          description: "Breve descripción del curso."
-        },
-        {
-          title: "Certificación en UX/UI Design",
-          date: "2020",
-          certification: "Certificado",
-          institution: "Instituto Z, Ciudad, País",
-          description: "Breve descripción del certificado."
-        }
-      ].map(({ title, date, certification, institution, description }, index) => (
-        <li class="relative mb-8 sm:mb-0 last:mb-0 animate-fade-up" key={title} style={`animation-delay: ${index * 0.2}s;`}>
-          <div class="flex items-start">
-            <div class="z-10 flex items-center justify-center w-8 h-8 rounded-full shrink-0 animate-pulse-dot" style="background-color: var(--card-bg);">
-              <svg class="w-4 h-4" style="color: var(--accent-color);" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-              </svg>
-            </div>
-            <div class="hidden sm:flex w-full h-0.5 mt-4 ml-2 animate-line-grow" style="background-color: var(--line-color);"></div>
-          </div>
-          <div class="mt-4 sm:pr-8 formation-item" style="color: var(--text-muted);">
-            <h3 class="text-lg font-semibold" style="color: var(--text-color);">
-              {title}
-            </h3>
-            <time class="block mb-2 text-sm font-normal leading-none">
-              {date}
-            </time>
-            <div class="mb-2">
-              <span class="inline-block rounded-full px-3 py-1 text-sm font-semibold animate-pop-in" style="background-color: var(--accent-color); color: var(--bg-color);">
-                {certification}
-              </span>
-            </div>
-            <p class="text-base font-normal">
-              {institution}. {description}
-            </p>
-          </div>
-        </li>
+      {education.map((item, index) => (
+        <EducationItem 
+          title={item.title} 
+          date={item.date} 
+          certification={item.certification} 
+          institution={item.institution} 
+          description={item.description} 
+          index={index} 
+        />
       ))}
     </ol>
   </div>
 </section>
 
-<style>
-  :root {
-    --bg-color: #000000;
-    --text-color: #20ffde;
-    --text-muted: #bec2c8;
-    --accent-color: #2dd4bf;
-    --card-bg: #f0fdfa;
-    --line-color: #e5e7eb;
-  }
-
-  .dark {
-    --bg-color: #1f2937;
-    --text-color: #f3f4f6;
-    --text-muted: #9ca3af;
-    --accent-color: #2dd4bf;
-    --card-bg: #374151;
-    --line-color: #4b5563;
-  }
-
-  .font-poppins {
-    font-family: 'Poppins', sans-serif;
-  }
-
-  /* Animación para el título */
-  @keyframes slide-in {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .animate-slide-in {
-    animation: slide-in 0.8s ease-out forwards;
-  }
-
-  /* Animación para los elementos de la lista */
-  @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .animate-fade-up {
-    animation: fade-up 0.6s ease-out forwards;
-  }
-
-  /* Animación de pulso para el círculo */
-  @keyframes pulse-dot {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5); }
-    50% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(45, 212, 191, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
-  }
-  .animate-pulse-dot {
-    animation: pulse-dot 2s ease-in-out infinite;
-  }
-
-  /* Animación para la línea horizontal */
-  @keyframes line-grow {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-  .animate-line-grow {
-    animation: line-grow 1s ease-out forwards;
-  }
-
-  /* Animación para el badge de certificación */
-  @keyframes pop-in {
-    0% { transform: scale(0.8); opacity: 0; }
-    60% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(1); }
-  }
-  .animate-pop-in {
-    animation: pop-in 0.5s ease-out forwards;
-  }
-
-  /* Hover interactivo */
-  .formation-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .formation-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-</style>
